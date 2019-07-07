@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.gu.utils.database.impl.DataUpdatedImpl" project="GU_TOOLS" 
+    file="/GU_TOOLS/src/com/gu/utils/database/impl/DataUpdatedImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="288" x="324" y="-154"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="2" language="java" name="com.gu.utils.database.DataBaseHandler.DataType" project="GU_TOOLS" 
+    file="/GU_TOOLS/src/com/gu/utils/database/DataBaseHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="141" x="799" y="561"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="3" language="java" name="com.gu.utils.database.impl.DataInsertedImpl" project="GU_TOOLS" 
+    file="/GU_TOOLS/src/com/gu/utils/database/impl/DataInsertedImpl.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="288" x="652" y="-154"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.gu.utils.database.DataBaseHandler.SpecificColumns" project="GU_TOOLS" 
+    file="/GU_TOOLS/src/com/gu/utils/database/DataBaseHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="120" x="980" y="561"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.gu.utils.database.DataBaseHandler" project="GU_TOOLS" 
+    file="/GU_TOOLS/src/com/gu/utils/database/DataBaseHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="675" width="344" x="980" y="-154"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="6" language="java" name="com.gu.utils.database.DataBaseActionInterFace" project="GU_TOOLS" 
+    file="/GU_TOOLS/src/com/gu/utils/database/DataBaseActionInterFace.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="277" x="1140" y="561"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="7" language="java" name="com.gu.utils.database.DataInterFace" project="GU_TOOLS" 
+    file="/GU_TOOLS/src/com/gu/utils/database/DataInterFace.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="288" x="471" y="561"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="8" language="java" name="com.gu.utils.database.SimpleDataBaseHandler" project="GU_TOOLS" 
+    file="/GU_TOOLS/src/com/gu/utils/database/SimpleDataBaseHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="308" x="1457" y="561"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="9">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <generalization id="10">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="5"/>  
+  </generalization>  
+  <nesting id="11">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="4"/>  
+  </nesting>  
+  <realization id="12">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="7"/>  
+  </realization>  
+  <nesting id="13">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="2"/>  
+  </nesting>  
+  <realization id="14">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
