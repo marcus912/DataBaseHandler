@@ -41,6 +41,6 @@ https://github.com/marcus912/tools/blob/master/src/main/java/marcus/utils/databa
 
 You might ask why don't we just use hibernate ?
 
-In 2017, we got a project which was an enhancement for previous project. The previous project was developed based on struts1 and used to access database through JDBC. Developers had spent a lot of time on coding statements specially when a large table with 100+ columns.
+In 2017, we got a project which was an enhancement for previous project. The previous project was developed based on struts1 and used to access database through JDBC. Developers had spent a lot of time on coding statements specially when they were accessing complex tables.
 
 I programmed it in order to resolve this issue. It's a light library and easy to use.
