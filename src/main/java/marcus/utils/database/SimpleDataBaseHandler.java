@@ -124,7 +124,7 @@ public class SimpleDataBaseHandler extends DataBaseHandler {
 								updateImpl.setString(p6stmt, i, columnNmae, bean);
 								break;
 							case CHAR:
-								insertImpl.setString(p6stmt, i, columnNmae, bean);
+								updateImpl.setString(p6stmt, i, columnNmae, bean);
 								break;
 							default :
 								updateImpl.setString(p6stmt, i, columnNmae, bean);
