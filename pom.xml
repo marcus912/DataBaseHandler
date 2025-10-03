@@ -3,31 +3,47 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>marcus.utils</groupId>
-  <artifactId>tools</artifactId>
+  <artifactId>database-handler</artifactId>
   <version>0.0.1</version>
   <packaging>jar</packaging>
 
-  <name>tools</name>
-  <url>http://maven.apache.org</url>
+  <name>DataBaseHandler</name>
+  <description>A lightweight ORM library for Oracle database using Java Reflection</description>
+  <url>https://github.com/marcus912/DataBaseHandler</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
 
   <dependencies>
+    <!-- Testing -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/p6spy/p6spy -->
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>3.12.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <version>1.4.200</version>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Core dependencies -->
     <dependency>
       <groupId>p6spy</groupId>
       <artifactId>p6spy</artifactId>
       <version>1.3</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/log4j/log4j -->
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
