@@ -118,7 +118,8 @@ public class Sample {
 			throw e;
 		}
 		try {
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@10.10.2.132:1541:juat", "japps","japps");
+			// TODO: Replace with your actual database connection details
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@hostname:port:sid", "username","password");
 			conn.setAutoCommit(false);
 			
 		} catch (SQLException e) {

@@ -29,8 +29,8 @@ public class DataInsertedImpl implements DataInterFace {
 		Class<? extends Object> clazz = bean.getClass();
 		try {
 			String methodName = "get" + columnName;
-			value = clazz.getMethod(methodName).invoke(bean) == null ? ""
-							: clazz.getMethod(methodName).invoke(bean).toString();
+			Object result = clazz.getMethod(methodName).invoke(bean);
+			value = result == null ? "" : result.toString();
 
 		} catch (NoSuchMethodException e) {
 			logger.error(DataBaseHandler.errorKey + " " + clazz.getName() + " column not found : " + columnName);
