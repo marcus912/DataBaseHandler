@@ -16,8 +16,8 @@ import org.apache.log4j.Logger;
 import marcus.utils.BA_TOOLS;
 
 /**
- * 實作 DataBaseActionInterFace
- * doInsert/doUpdate/doDelete 宣告為 abstract，在子類別實作
+ * Implements DataBaseActionInterFace
+ * doInsert/doUpdate/doDelete are declared as abstract, implemented in subclasses
  * @author marcus.lin
  *
  */
@@ -36,14 +36,14 @@ public abstract class DataBaseHandler implements DataBaseActionInterFace {
 	public static final String equalTo = "=";
 	public static final String slash = "/";
 	public static final String sysDate = "SYSDATE";
-	//日期格式物件宣告
+	// Date format object declarations
 	public static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 	public static final SimpleDateFormat dateTimeFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	public static final SimpleDateFormat dateSlashFormat = new SimpleDateFormat("yyyy/MM/dd");
 	public static final SimpleDateFormat dateTimeSlashFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	
 	/**
-	 * 特殊處理的欄位宣告
+	 * Special handling column declarations
 	 *
 	 */
 	public final static class SpecificColumns {
@@ -51,7 +51,7 @@ public abstract class DataBaseHandler implements DataBaseActionInterFace {
 	}
 	
 	/**
-	 * 資料庫資料型態
+	 * Database data types
 	 *
 	 */
 	public enum DataType {
@@ -205,7 +205,7 @@ public abstract class DataBaseHandler implements DataBaseActionInterFace {
 	}
 	
 	/**
-	 * 串接 insert SQL statement
+	 * Generate insert SQL statement
 	 * @param schema
 	 * @param table table name
 	 * @param rs
@@ -235,12 +235,12 @@ public abstract class DataBaseHandler implements DataBaseActionInterFace {
 	}
 	
 	/**
-	 * 串接 update SQL statement
+	 * Generate update SQL statement
 	 * @param schema
 	 * @param table table name
 	 * @param rs
 	 * @param bean entity
-	 * @param keys keys where 條件欄位
+	 * @param keys keys for WHERE condition columns
 	 * @return SQL
 	 * @throws SQLException
 	 */
@@ -254,7 +254,7 @@ public abstract class DataBaseHandler implements DataBaseActionInterFace {
 			while(rs.next()) {
 				try {
 					Method m = clazz.getMethod("get" + rs.getString(1));
-					// bean value 不為null的欄位會被加入到SQL
+					// Only columns with non-null bean values will be added to SQL
 					if(null != m.invoke(bean)) {
 						updateStatement.append(rs.getString(1)).append(equalTo).append(questionMark);
 						updateStatement.append(comma);
@@ -282,11 +282,11 @@ public abstract class DataBaseHandler implements DataBaseActionInterFace {
 	}
 	
 	/**
-	 * 串接 delete SQL statement
+	 * Generate delete SQL statement
 	 * @param schema
 	 * @param table table name
 	 * @param bean entity
-	 * @param keys where 條件欄位
+	 * @param keys WHERE condition columns
 	 * @return SQL
 	 * @throws Exception
 	 */
@@ -335,7 +335,7 @@ public abstract class DataBaseHandler implements DataBaseActionInterFace {
 	}
 	
 	/**
-	 * 取得系統現在時間
+	 * Get current system time
 	 * @return
 	 */
 	public static java.sql.Timestamp getCurrentDateTime() {

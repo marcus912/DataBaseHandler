@@ -23,26 +23,26 @@ public class Sample {
 		}
 		CODES entity = sampleClass.genEntity();
 		
-		// 新增
+		// Insert
 		sampleClass.addData(conn, entity);
-		
-		
-		// 修改  
-		// primary keys 不可異動 
-		entity.setCODE_DESC("資料002");
+
+
+		// Update
+		// Primary keys cannot be modified 
+		entity.setCODE_DESC("data 002 updated");
 		entity.setCODE_DESC_ENG("data 002");
 		entity.setUPDATE_BY("000000000002");
 		entity.setUPDATE_DATE(DataBaseHandler.sysDate);
 		sampleClass.editData(conn, entity);
 		
-		// 刪除
+		// Delete
 		sampleClass.deleteData(conn, entity);
 		
 		// date format
 //		DataBaseHandler dbHandler = new SimpleDataBaseHandler();
 //		entity.setUPDATE_DATE(dbHandler.dateTimeSlashFormat(rs.getTimestamp("")));
 		
-		// 修改指定欄位
+		// Update specific columns
 		sampleClass.doUpdate(conn);
 		
 		if(conn != null) {
@@ -58,7 +58,7 @@ public class Sample {
 		String sql = "select code_desc from sc.codes where code_type='SAMPLE' and code='1'";
 		CODES code = new CODES();
 		code.setCODE_DESC(dbHandler.query(conn, sql).get("CODE_DESC") + "001");
-		code.setCODE_DESC_ENG(""); //set null
+		code.setCODE_DESC_ENG(""); // Set null
 		// keys
 		code.setAPP_NAME("PROG");
 		code.setCODE_TYPE("SAMPLE");
@@ -71,7 +71,7 @@ public class Sample {
 		codes.setAPP_NAME("PROG");
 		codes.setCODE_TYPE("SAMPLE");
 		codes.setCODE("2");
-		codes.setCODE_DESC("資料2");
+		codes.setCODE_DESC("data 2");
 		codes.setCODE_DESC_ENG("data 2");
 		codes.setCREATE_BY("000000006776");
 		codes.setUPDATE_BY("000000006776");

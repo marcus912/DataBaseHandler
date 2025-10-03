@@ -13,9 +13,9 @@ import marcus.utils.database.DataBaseHandler;
 import marcus.utils.database.DataInterFace;
 
 /**
- * 實作 DataInterFace
- * 處理 insert 資料
- * 利用 reflection 將物件資料同步至 PreparedStatement
+ * Implements DataInterFace
+ * Handles insert data operations
+ * Uses reflection to sync object data to PreparedStatement
  * @author marcus.lin
  *
  */
