@@ -12,8 +12,8 @@ import marcus.utils.database.impl.DataInsertedImpl;
 import marcus.utils.database.impl.DataUpdatedImpl;
 
 /**
- * 實作 DataBaseHandler abstract methods
- * DB資料型態 對應 DataInterFace methods
+ * Implements DataBaseHandler abstract methods
+ * Maps DB data types to DataInterFace methods
  * @author marcus.lin
  *
  */
