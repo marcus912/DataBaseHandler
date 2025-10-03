@@ -1,46 +1,88 @@
 # DataBaseHandler
-The purpose is to avoid accessing database through PL/SQL.
 
-It's based on Java Reflection.
+A lightweight ORM library that simplifies database operations using Java Reflection, eliminating the need to write repetitive SQL statements.
 
-<pre>
-<code>
-Connection conn = conn = DriverManager.getConnection("url","name","password");
+## Features
+
+- **Simple CRUD Operations**: Insert, update, delete without writing SQL
+- **Reflection-Based Mapping**: Automatic mapping between Java objects and database tables
+- **Minimal Configuration**: No complex setup or annotations required
+- **JDBC Compatible**: Works with any JDBC-compliant database
+
+## Quick Start
+
+```java
+// Establish database connection
+Connection conn = DriverManager.getConnection("url", "username", "password");
 DataBaseHandler dbHandler = new SimpleDataBaseHandler();
 
-CODES entity = new CODES;
+// Create and populate entity
+CODES entity = new CODES();
 entity.setCODE_DESC("description");
 entity.setCODE_DESC_ENG("data 002");
 entity.setUPDATE_BY("000000000002");
 entity.setUPDATE_DATE(DataBaseHandler.sysDate);
 
-// update(Connection conn, String schema, String table, Object bean, String... keys)
+// Update record (no SQL required!)
 dbHandler.update(conn, "SC", "CODES", entity, "APP_NAME", "CODE_TYPE", "CODE");
-</code>
-</pre>
+```
 
-## **How to use it ?**
+## How to Use
 
-<b>step 1 </b>
+### Step 1: Create Entity Class
 
-Create a entity for Object-relational mapping (ORM).
+Create an entity class for Object-Relational Mapping (ORM). **Important**: Class field names must exactly match the database table column names.
 
-Make sure there are no differences between class variables and table columns.
+```java
+public class CODES {
+    private String APP_NAME;
+    private String CODE_TYPE;
+    private String CODE;
+    private String CODE_DESC;
+    // ... getters and setters
+}
+```
 
-<b>step 2 </b>
+### Step 2: Populate Entity
 
-Assign values to entity
+Assign values to your entity object.
 
-<b>step 3 </b> <br/>
+```java
+CODES entity = new CODES();
+entity.setAPP_NAME("PROG");
+entity.setCODE_TYPE("SAMPLE");
+entity.setCODE("1");
+```
 
-Call DataBaseHandler update function, data will be stored in database without update statement.
+### Step 3: Execute Operations
 
-https://github.com/marcus912/tools/blob/master/src/main/java/marcus/utils/database/samples/Sample.java
+Call the appropriate DataBaseHandler method:
 
-<b>Conclusion </b>
+```java
+// Insert
+dbHandler.insert(conn, "SCHEMA", "TABLE_NAME", entity);
 
-You might ask why don't we just use hibernate ?
+// Update (specify primary key columns)
+dbHandler.update(conn, "SCHEMA", "TABLE_NAME", entity, "KEY_COLUMN_1", "KEY_COLUMN_2");
 
-In 2017, we got a project which was an enhancement for previous project. The previous project was developed based on struts1 and used to access database through JDBC. Developers had spent a lot of time on coding statements specially when they were accessing complex tables.
+// Delete
+dbHandler.delete(conn, "SCHEMA", "TABLE_NAME", entity, "KEY_COLUMN_1", "KEY_COLUMN_2");
+```
 
-I programmed it in order to resolve this issue. It's a light library and easy to use.
+For complete examples, see [Sample.java](src/main/java/marcus/utils/database/samples/Sample.java).
+
+## Why Not Hibernate?
+
+This library was created in 2017 for a legacy Struts 1 project that relied heavily on JDBC. Developers were spending significant time writing SQL statements, especially for complex tables.
+
+DataBaseHandler provides a lightweight, easy-to-learn alternative that:
+- Requires minimal setup
+- Works with existing JDBC code
+- Has a small footprint
+- Is simple to integrate into legacy projects
+
+## Requirements
+
+- Java 8 or higher
+- JDBC-compliant database driver
+- Apache Log4j (for logging)
