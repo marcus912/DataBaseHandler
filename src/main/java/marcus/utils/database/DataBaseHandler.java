@@ -13,8 +13,6 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import marcus.utils.BA_TOOLS;
-
 /**
  * Implements DataBaseActionInterFace
  * doInsert/doUpdate/doDelete are declared as abstract, implemented in subclasses
@@ -27,7 +25,6 @@ public abstract class DataBaseHandler implements DataBaseActionInterFace {
 	Logger logger = Logger.getLogger(DataBaseHandler.class);
 	public static final String errorKey = DataBaseHandler.class.getName();
 
-	BA_TOOLS tools = BA_TOOLS.getInstance();
 	public static final String dot = ".";
 	public static final String comma = ",";
 	public static final String questionMark = "?";

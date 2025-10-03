@@ -8,7 +8,6 @@ import org.apache.log4j.Logger;
 
 import com.p6spy.engine.spy.P6PreparedStatement;
 
-import marcus.utils.BA_TOOLS;
 import marcus.utils.database.DataBaseHandler;
 import marcus.utils.database.DataInterFace;
 
@@ -21,7 +20,6 @@ import marcus.utils.database.DataInterFace;
  */
 public class DataInsertedImpl implements DataInterFace {
 	Logger logger = Logger.getLogger(this.getClass());
-	BA_TOOLS tools = BA_TOOLS.getInstance();
 	
 	public void setString(P6PreparedStatement p6stmt, int index, String columnName, Object bean) throws SQLException {
 
@@ -56,7 +54,7 @@ public class DataInsertedImpl implements DataInterFace {
 			
 			if(type.equals(String.class)) {
 				String value = obj == null ? "" : obj.toString();
-				if(tools.isEmpty(value)) {
+				if(value == null || value.isEmpty()) {
 					p6stmt.setDate(index, null);
 				} else if(value.toUpperCase().equals(DataBaseHandler.sysDate)) {
 					p6stmt.setTimestamp(index, DataBaseHandler.getCurrentDateTime());
